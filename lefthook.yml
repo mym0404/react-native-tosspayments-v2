@@ -1,14 +1,27 @@
 pre-commit:
   parallel: true
   commands:
-    lint:
+    lint:js:
       glob: "*.{js,ts,jsx,tsx}"
-      run: npx eslint {staged_files}
-    types:
-      glob: "*.{js,ts, jsx, tsx}"
-      run: npx tsc --noEmit
-commit-msg:
+      run: yarn eslint --cache --max-warnings=0 {staged_files}
+    typecheck:
+      glob: "*.{ts,tsx}"
+      run: yarn tsc --noEmit
+
+check:
   parallel: true
   commands:
+    lint:js:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: yarn eslint --cache --max-warnings=0 {all_files}
+    typecheck:
+      glob: "*.{ts,tsx}"
+      run: yarn tsc --noEmit
+    build:
+      run: yarn prepack
+
+commit-msg:
+  commands:
     commitlint:
-      run: npx commitlint --edit
+      run: npx --no-install commitlint --edit
+
