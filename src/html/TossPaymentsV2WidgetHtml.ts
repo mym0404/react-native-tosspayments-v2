@@ -19,7 +19,6 @@ export const TossPaymentsV2WidgetHtml = `<!DOCTYPE html>
   main();
 
   async function main () {
-    alert('1');
     const button = document.getElementById('payment-button');
     const coupon = document.getElementById('coupon-box');
     // ------  결제위젯 초기화 ------

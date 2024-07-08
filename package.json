@@ -49,14 +49,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mym0404/tosspaymentsv2.git"
+    "url": "https://github.com/mym0404/react-native-tosspayments-v2"
   },
   "author": "MJ Studio <mym0404@gmail.com> (https://github.com/mym0404)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mym0404/tosspaymentsv2/issues"
+    "url": "https://github.com/mym0404/react-native-tosspayments-v2/issues"
   },
-  "homepage": "https://github.com/mym0404/tosspaymentsv2#readme",
+  "homepage": "https://github.com/mym0404/react-native-tosspayments-v2#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
