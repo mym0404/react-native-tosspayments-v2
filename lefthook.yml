@@ -3,6 +3,7 @@ pre-commit:
   commands:
     lint:js:
       glob: "*.{js,ts,jsx,tsx}"
+      exclude: 'Html\.ts$'
       run: yarn eslint --cache --max-warnings=0 {staged_files}
     typecheck:
       glob: "*.{ts,tsx}"
@@ -13,6 +14,7 @@ check:
   commands:
     lint:js:
       glob: "*.{js,ts,jsx,tsx}"
+      exclude: 'Html\.ts$'
       run: yarn eslint --cache --max-warnings=0 {all_files}
     typecheck:
       glob: "*.{ts,tsx}"

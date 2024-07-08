@@ -2,3 +2,5 @@ node_modules/
 lib/
 expo-config-plugin/build
 docs/
+tools/
+src/html/

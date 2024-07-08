@@ -6,6 +6,16 @@
   "main": "./lib/commonjs/index.cjs",
   "module": "./lib/module/index.mjs",
   "types": "./lib/typescript/src/index.d.ts",
+  "scripts": {
+    "dev": "yarn workspace tosspaymentsv2-example start",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "clean": "del-cli lib",
+    "prepack": "bob build",
+    "t": "yarn lefthook run check",
+    "release": "release-it",
+    "html:gen": "zx tools/convert-html.mjs"
+  },
   "exports": {
     ".": {
       "types": "./lib/typescript/src/index.d.ts",
@@ -31,19 +41,11 @@
     "!**/__mocks__",
     "!**/.*"
   ],
-  "scripts": {
-    "example": "yarn workspace tosspaymentsv2-example",
-    "test": "jest",
-    "typecheck": "tsc --noEmit",
-    "clean": "del-cli lib",
-    "prepack": "bob build",
-    "t": "yarn lefthook run check",
-    "release": "release-it"
-  },
   "keywords": [
     "react-native",
-    "ios",
-    "android"
+    "tosspayments",
+    "toss",
+    "tosspaymentsv2"
   ],
   "repository": {
     "type": "git",

@@ -1,30 +1,28 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'tosspaymentsv2';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { TossPaymentsV2Widget } from 'react-native-tosspayments-v2';
 
-export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
+function Home() {
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <TossPaymentsV2Widget
+        style={{ flex: 1 }}
+        webViewProps={{
+          onLoad: ({ nativeEvent }) => {
+            console.log(`onLoad, ${JSON.stringify(nativeEvent, null, 2)}`);
+          },
+          onError: ({ nativeEvent }) => {
+            console.log(`onError, ${nativeEvent}`);
+          },
+        }}
+      />
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <Home />
+    </SafeAreaProvider>
+  );
+}

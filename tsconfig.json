@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "tosspaymentsv2": ["./src/index"]
+      "react-native-tosspayments-v2": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
