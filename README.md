@@ -7,6 +7,8 @@ Unofficial Toss Payments V2 porting for React Native
 >
 > 우선 Toss Payments V2의 공식 문서에서 React Native를 공식적으로 지원 해줄 것인지에 대한 여부와 추후 상황을 고려해 개발 일정이 잡힐 것 같고, 현재는 우선적으로 간편 위젯관련된 기능만 단순하게 탑재할 예정입니다.
 
+![](https://raw.githubusercontent.com/mym0404/image-archive/master/202407081938643.png)
+
 ## Installation
 
 ```sh
