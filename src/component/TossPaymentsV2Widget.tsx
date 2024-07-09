@@ -3,7 +3,6 @@ import {
   type ForwardedRef,
   useImperativeHandle,
   useRef,
-  useEffect,
 } from 'react';
 import WebView, { type WebViewProps } from 'react-native-webview';
 import { TossPaymentsV2WidgetHtml } from '../html/TossPaymentsV2WidgetHtml';
@@ -42,12 +41,6 @@ const TossPaymentsV2Widget = forwardRef(
       setParams('customerKey', customerKey);
       init();
     });
-
-    useEffect(() => {
-      setTimeout(() => {
-        init();
-      }, 1000);
-    }, [init]);
 
     return (
       <WebView
