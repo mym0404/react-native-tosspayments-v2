@@ -99,15 +99,15 @@
         });
 
         // ------  결제 UI 렌더링 ------
-        await widgets.renderPaymentMethods({
+        const paymentMethodWidget = await widgets.renderPaymentMethods({
           selector: '#payment-method',
-          variantKey: 'DEFAULT',
+          variantKey: PARAMS['paymentMethodsVariantKey'],
         });
 
         // ------  이용약관 UI 렌더링 ------
-        await widgets.renderAgreement({
+        const agreementWidget = await widgets.renderAgreement({
           selector: '#agreement',
-          variantKey: 'AGREEMENT',
+          variantKey: PARAMS['agreementVariantKey'],
         });
 
         // ------ '결제하기' 버튼 누르면 결제창 띄우기 ------

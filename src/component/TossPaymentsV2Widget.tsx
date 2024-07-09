@@ -26,6 +26,8 @@ type TossPaymentsV2WidgetProps = {
   >;
   clientKey: string;
   customerKey: 'ANONYMOUS' | (string & {});
+  paymentMethodsVariantKey?: string;
+  agreementVariantKey?: string;
   paymentRequest: TossPaymentsV2WidgetPaymentRequest;
   onPaymentSuccess: (
     response: TossPaymentsV2WidgetPaymentSuccessResponse
@@ -72,6 +74,8 @@ const TossPaymentsV2Widget = forwardRef(
       onPaymentSuccess,
       paymentRequest,
       onPaymentError,
+      agreementVariantKey,
+      paymentMethodsVariantKey,
     }: TossPaymentsV2WidgetProps,
     ref: ForwardedRef<TossPaymentsV2WidgetRef>
   ) => {
@@ -121,6 +125,11 @@ const TossPaymentsV2Widget = forwardRef(
       setParams('customerMobilePhone', customerMobilePhone);
       setParams('card', card);
       setParams('taxFreeAmount', taxFreeAmount);
+      setParams(
+        'paymentMethodsVariantKey',
+        paymentMethodsVariantKey || 'DEFAULT'
+      );
+      setParams('agreementVariantKey', agreementVariantKey || 'AGREEMENT');
       init();
     });
 
