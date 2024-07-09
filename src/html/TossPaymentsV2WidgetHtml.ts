@@ -11,14 +11,16 @@ export const TossPaymentsV2WidgetHtml = `<!doctype html>
     <style></style>
   </head>
   <body>
-    <!-- 결제 UI -->
-    <div id="payment-method"></div>
-    <!-- 이용약관 UI -->
-    <div id="agreement"></div>
-    <!-- 결제하기 버튼 -->
-    <button class="button" id="payment-button" style="margin-top: 30px">
-      결제하기
-    </button>
+    <div id="root">
+      <!-- 결제 UI -->
+      <div id="payment-method"></div>
+      <!-- 이용약관 UI -->
+      <div id="agreement"></div>
+      <!-- 결제하기 버튼 -->
+      <button class="button" id="payment-button" style="margin-top: 30px">
+        결제하기
+      </button>
+    </div>
 
     <script>
       const UNKNOWN_ERROR = {
@@ -62,6 +64,21 @@ export const TossPaymentsV2WidgetHtml = `<!doctype html>
           );
         }
       }
+
+      function onDocumentResized() {
+        const container = document.getElementById('root');
+        if (container) {
+          sendMessageToRN('updateLayout', {
+            scrollWidth: container.scrollWidth,
+            scrollHeight: container.scrollHeight,
+            clientWidth: container.clientWidth,
+          });
+        }
+      }
+      const documentResizeObserver = new ResizeObserver(() => {
+        onDocumentResized();
+      });
+      documentResizeObserver.observe(document.getElementById('root'));
 
       async function init() {
         const button = document.getElementById('payment-button');

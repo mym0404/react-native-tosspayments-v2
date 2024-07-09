@@ -7,7 +7,7 @@ function Home() {
       <TossPaymentsV2Widget
         clientKey={'test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm'}
         customerKey={'ANONYMOUS'}
-        style={{ flex: 1 }}
+        style={{ borderWidth: 1 }}
         webViewProps={{}}
         onPaymentSuccess={(response) => {
           console.log(`SUCCESS, ${JSON.stringify(response)}`);
