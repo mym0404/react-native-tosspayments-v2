@@ -1,6 +1,6 @@
 {
   "name": "react-native-tosspayments-v2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Unofficial Toss Payments V2 porting for React Native",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.cjs",
