@@ -5,6 +5,8 @@ function Home() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <TossPaymentsV2Widget
+        clientKey={'test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm'}
+        customerKey={'ANONYMOUS'}
         style={{ flex: 1 }}
         webViewProps={{
           onLoad: ({ nativeEvent }) => {
