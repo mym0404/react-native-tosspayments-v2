@@ -151,6 +151,7 @@
     "version": "0.38.1"
   },
   "dependencies": {
-    "@mj-studio/js-util": "^1.1.15"
+    "@mj-studio/js-util": "^1.1.15",
+    "react-native-url-polyfill": "^2.0.0"
   }
 }

@@ -12372,6 +12372,7 @@ __metadata:
     react: "npm:18.2.0"
     react-native: "npm:0.74.3"
     react-native-builder-bob: "npm:0.25.0"
+    react-native-url-polyfill: "npm:^2.0.0"
     react-native-webview: "npm:^13.10.5"
     release-it: "npm:17.4.1"
     typescript: "npm:5.4.5"
@@ -12381,6 +12382,17 @@ __metadata:
     react-native-webview: "*"
   languageName: unknown
   linkType: soft
+
+"react-native-url-polyfill@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "react-native-url-polyfill@npm:2.0.0"
+  dependencies:
+    whatwg-url-without-unicode: "npm:8.0.0-3"
+  peerDependencies:
+    react-native: "*"
+  checksum: 10/6a8d605eeb1b0ee9b0f47f1866acc2edfa2131a4a8fb1ea3839ceb507e225b894ed66f49a3bd826fc964f2c8005b3678c9d3b65d07eb0a3b979be830cb618686
+  languageName: node
+  linkType: hard
 
 "react-native-web@npm:~0.19.10":
   version: 0.19.12

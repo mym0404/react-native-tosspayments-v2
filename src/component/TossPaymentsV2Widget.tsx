@@ -147,7 +147,6 @@ const TossPaymentsV2Widget = forwardRef(
         } else if (type === 'updateLayout') {
           const { scrollHeight } = data;
           setHeight(scrollHeight + 24);
-          console.log(scrollHeight);
         }
       }
     });
