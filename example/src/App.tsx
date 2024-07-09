@@ -8,13 +8,18 @@ function Home() {
         clientKey={'test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm'}
         customerKey={'ANONYMOUS'}
         style={{ flex: 1 }}
-        webViewProps={{
-          onLoad: ({ nativeEvent }) => {
-            console.log(`onLoad, ${JSON.stringify(nativeEvent, null, 2)}`);
-          },
-          onError: ({ nativeEvent }) => {
-            console.log(`onError, ${nativeEvent}`);
-          },
+        webViewProps={{}}
+        onPaymentSuccess={(response) => {
+          console.log(`SUCCESS, ${JSON.stringify(response)}`);
+        }}
+        onPaymentFail={(response) => {
+          console.log(`FAIL, ${JSON.stringify(response)}`);
+        }}
+        paymentRequest={{
+          amount: 1000,
+          orderId: 'asfasfasfwg2e2ec2ecaws',
+          orderName: 'order name',
+          card: { taxExemptionAmount: 123 },
         }}
       />
     </SafeAreaView>

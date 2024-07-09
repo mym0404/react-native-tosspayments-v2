@@ -149,5 +149,8 @@
   "create-react-native-library": {
     "type": "library",
     "version": "0.38.1"
+  },
+  "dependencies": {
+    "@mj-studio/js-util": "^1.1.15"
   }
 }

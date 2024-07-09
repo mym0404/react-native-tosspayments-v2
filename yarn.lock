@@ -2791,6 +2791,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mj-studio/js-util@npm:^1.1.15":
+  version: 1.1.15
+  resolution: "@mj-studio/js-util@npm:1.1.15"
+  checksum: 10/8b766009079574f0a1cacd0541951333bcfa1f5002b80ea0f0a9ed44795e6c3fcb95e3d486e444018e8c41e593f17cda2fe78e13baf7cdd41ba95294ff6cbd70
+  languageName: node
+  linkType: hard
+
 "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
   version: 5.1.1-v1
   resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
@@ -12349,6 +12356,7 @@ __metadata:
   resolution: "react-native-tosspayments-v2@workspace:."
   dependencies:
     "@commitlint/config-conventional": "npm:19.2.2"
+    "@mj-studio/js-util": "npm:^1.1.15"
     "@react-native/eslint-config": "npm:0.74.85"
     "@release-it/conventional-changelog": "npm:8.0.1"
     "@types/jest": "npm:29.5.12"
