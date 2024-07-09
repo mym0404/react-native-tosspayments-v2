@@ -10,7 +10,13 @@ import WebView, {
   type WebViewMessageEvent,
 } from 'react-native-webview';
 import { TossPaymentsV2WidgetHtml } from '../html/TossPaymentsV2WidgetHtml';
-import { type StyleProp, type ViewStyle, View } from 'react-native';
+import {
+  type StyleProp,
+  type ViewStyle,
+  View,
+  Platform,
+  Linking,
+} from 'react-native';
 import { useStableCallback } from '../util/useStableCallback';
 import { is } from '@mj-studio/js-util';
 
@@ -198,8 +204,28 @@ const TossPaymentsV2Widget = forwardRef(
               });
 
               return false;
+            } else if (
+              url.startsWith('http://') ||
+              url.startsWith('https://') ||
+              url.startsWith('about:blank')
+            ) {
+              return true;
+            } else if (Platform.OS === 'android') {
+              // AndroidIntentUtil.handleTossPaymentUrl(url).catch(
+              //   onFailedOpenISPApps
+              // );
+              Linking.openURL(url).catch(onFailedOpenISPApps);
+            } else if (Platform.OS === 'ios') {
+              Linking.openURL(url).catch(onFailedOpenISPApps);
             }
+
             return true;
+
+            function onFailedOpenISPApps() {
+              console.log(
+                '카드사 결제앱 실행에 실패했어요\n설치 후 진행해주세요!'
+              );
+            }
           }}
         />
       </View>
